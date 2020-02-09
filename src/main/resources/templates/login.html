@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Signin Template for Bootstrap</title>
+    <!-- Bootstrap core CSS -->
+    <link  charset="UTF-8"th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.css}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link th:href="@{/asserts/css/signin.css}"  rel="stylesheet" charset="UTF-8">
+    <script type="text/javascript" src="asserts/js/jquery-3.2.1.slim.min.js"
+            th:src="@{/webjars/jquery/3.3.1/jquery.js}"></script>
+    <script type="text/javascript" src="asserts/js/popper.min.js"
+            th:src="@{/webjars/popper.js/1.11.1/dist/popper.js}"></script>
+    <script type="text/javascript" src="asserts/js/bootstrap.min.js"
+            th:src="@{/webjars/bootstrap/4.0.0/js/bootstrap.js}"></script>
+</head>
+<!--不需要下面的#login的国际化资源，注释掉-->
+<body class="text-center">
+<form class="form-signin"  th:action="@{/login}" method="post" >
+    <img class="mb-4" th:src="@{/asserts/img/bootstrap-solid.svg}"  alt=""
+         width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal" >请登录</h1>
+    <!--判断密码,简单异常处理-->
+    <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+    <!-- 下方的文本报错暂时取出 th:text="#{login.username}" -->
+
+    <label class="sr-only" >Username</label>
+    <input type="text" name="username" class="form-control" placeholder="Username"
+           required="" autofocus="">
+<!--    th:text="#{login.password}" -->
+    <label class="sr-only" >Password</label>
+<!--    th:placeholder="#{login.username}"-->
+    <input type="password" name="password" class="form-control" placeholder="Password"
+            required="">
+<!--    <div class="checkbox mb-3">-->
+<!--&lt;!&ndash;        <label>&ndash;&gt;-->
+<!--&lt;!&ndash;            <input type="checkbox" value="remember-me"/> 记住我&ndash;&gt;-->
+<!--&lt;!&ndash;        </label>&ndash;&gt;-->
+<!--    </div>-->
+<!--    th:text="#{login.btn}"-->
+    <button class="btn btn-lg btn-primary btn-block" type="submit" >Sign in</button>
+    <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+    <a class="btn btn-sm" th:href="@{/index.html}">首页</a>
+<!--   <a class="btn btn-sm" th:href="@{/index.html(l='en_US')}">English</a>-->
+</form>
+</body>
+
+</html>

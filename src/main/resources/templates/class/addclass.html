@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://getbootstrap.com/docs/4.0/examples/dashboard/ -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--增改二合一页面，使用id属性为空判断修改还是添加-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dashboard Template for Bootstrap</title>
+    <!-- Bootstrap core CSS -->
+    <link href="asserts/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.css}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="asserts/css/dashboard.css" th:href="@{/static/asserts/css/dashboard.css}" rel="stylesheet">
+    <style type="text/css">
+        /* Chart.js */
+
+        @-webkit-keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+        }
+    </style>
+</head>
+
+<body>
+<!--引入抽取的topbar-->
+<!--模板名：会使用thymeleaf的前后缀配置规则进行解析-->
+<div th:replace="commons/bar::topbar"></div>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <!--引入侧边栏-->
+        <div th:replace="commons/bar::#sidebar(activeUri='classes')"></div>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <!--需要区分是课程 修改还是添加,修改会传回带有id的uri,添加没有id-->
+            <form th:action="${claBe!=null}?@{/class/}+${claBe.class_id}:@{/class}" method="post">
+                <!--发送put请求修改学生数据-->
+                <!--
+                1、SpringMVC中配置HiddenHttpMethodFilter;（SpringBoot自动配置好的）
+                2、页面创建一个post表单
+                3、创建一个input项，name="_method";值就是我们指定的请求方式
+                -->
+                <!--隐藏id的输入框，自动生成 学生stuEdit不为空才产生修改框-->
+                <input type="hidden" name="_method" value="put" th:if="${claBe!=null}"/>
+                <p>所有字段不能为空,主键不能修改</p>
+                <!--主键不能修改,只在修改时显示-->
+                <div class="form-group" >
+                    <label >Id </label>
+                    <input name="class_id" class="form-control" type="text" th:value="${claBe.class_id}" th:if="${claBe!=null}" readonly="readonly"
+                    />
+
+                    <input name="class_id" class="form-control"  th:value="${claBe!=null}?${claBe.class_id}" th:if="${claBe==null}" />
+                </div>
+                <div class="form-group " >
+                    <label>课程名</label>
+                    <input name="class_name" type="text" class="form-control" placeholder="身上"
+                           th:value="${claBe!=null}?${claBe.class_name}"/>
+                </div>
+                <div class="form-group">
+                    <label>任课教师</label>
+                        <input class="form-control" type="text" name="class_teacher"
+                               th:value="${claBe!=null}?${claBe.class_teacher}"/>
+
+                </div>
+
+                    <div class="form-group">
+                        <label>上课周数 1-20周之间</label>
+                        <input name="class_duration" type="text" class="form-control"
+                               th:value="${claBe!=null}?${claBe.class_duration}"/>
+                    </div>
+                    <!--                <div class="form-group">-->
+                    <!--                    <label>department</label>-->
+                    <!--                    &lt;!&ndash;提交的是部门的id&ndash;&gt;-->
+                    <!--                    <select class="form-control" name="department.id">-->
+                    <!--                        <option th:selected="${class!=null}?${dept.id == class.department.id}" th:value="${dept.id}" th:each="dept:${depts}" th:text="${dept.departmentName}">1</option>-->
+                    <!--                    </select>-->
+                    <!--                </div>-->
+                    <div class="form-group">
+                        <label>创建时间 (输入格式:yyyy-MM-dd HH:mm)</label>
+                        <input name="class_createTime" type="text" class="form-control"
+                               th:value="${claBe!=null}?${#dates.format(claBe.class_createTime, 'yyyy-MM-dd HH:mm')}"/>
+                    </div>
+                    <div class="form-group">
+                        <label>更新时间 (输入格式:yyyy-MM-dd HH:mm)</label>
+                        <input name="class_updateTime" type="text" class="form-control"
+                               th:value="${claBe!=null}?${#dates.format(claBe.class_updateTime, 'yyyy-MM-dd HH:mm')}"/>
+                    </div>
+                <div class="form-group">
+                    <label>上课教室</label>
+                    <input class="form-control" type="text" name="classroom"
+                           th:value="${claBe!=null}?${claBe.classroom}"/>
+
+                </div>
+                    <button type="submit" class="btn btn-primary" th:text="${claBe!=null}?'修改':'添加'"></button>
+            </form>
+        </main>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="asserts/js/jquery-3.2.1.slim.min.js"
+        th:src="@{/webjars/jquery/3.3.1/jquery.js}"></script>
+<script type="text/javascript" src="asserts/js/popper.min.js"
+        th:src="@{/webjars/popper.js/1.11.1/dist/popper.js}"></script>
+<script type="text/javascript" src="asserts/js/bootstrap.min.js"
+        th:src="@{/webjars/bootstrap/4.0.0/js/bootstrap.js}"></script>
+
+<!-- Icons -->
+<script type="text/javascript" src="asserts/js/feather.min.js" th:src="@{/static/asserts/js/feather.min.js}"></script>
+<script>
+    feather.replace()
+</script>
+
+</body>
+
+</html>

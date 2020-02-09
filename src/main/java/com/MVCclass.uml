@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="1147.0221354166665" y="386.0">com.example.StudentDAO.ClassRepository</node>
+    <node x="0.0" y="815.0">com.example.handler.LoginHandlerInterceptor</node>
+    <node x="0.0" y="549.0">com.example.controller.StudentController</node>
+    <node x="1246.9149925595236" y="560.5">com.example.controller.ClassController</node>
+    <node x="781.10546875" y="386.0">com.example.StudentDAO.GradeRepository</node>
+    <node x="329.0" y="572.0">com.example.controller.LoginController</node>
+    <node x="85.0" y="925.0">com.example.config.MyMvcConfig</node>
+    <node x="272.0055803571429" y="0.0">com.example.StudentDomain.StudentBean</node>
+    <node x="943.39453125" y="0.0">com.example.StudentDomain.GradeBean</node>
+    <node x="1193.9966517857142" y="0.0">com.example.StudentDomain.ClassBean</node>
+    <node x="783.7533482142858" y="560.5">com.example.controller.GradeController</node>
+    <node x="492.0" y="815.0">com.example.DemoApplicationTests</node>
+    <node x="583.10546875" y="397.5">com.example.DemoApplication</node>
+    <node x="167.52976190476193" y="386.0">com.example.StudentDAO.StudentRepository</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.example.controller.GradeController" target="com.example.DemoApplication">
+      <point x="-89.14285714285722" y="-99.0" />
+      <point x="850.6104910714284" y="509.0" />
+      <point x="693.73046875" y="509.0" />
+      <point x="22.125" y="30.0" />
+    </edge>
+    <edge source="com.example.StudentDAO.ClassRepository" target="com.example.StudentDomain.ClassBean">
+      <point x="0.0" y="-41.5" />
+      <point x="1303.0221354166665" y="361.0" />
+      <point x="1307.4966517857142" y="361.0" />
+      <point x="0.0" y="168.0" />
+    </edge>
+    <edge source="com.example.controller.ClassController" target="com.example.StudentDomain.ClassBean">
+      <point x="103.0" y="-99.0" />
+      <point x="1504.4149925595236" y="529.0" />
+      <point x="1497.1649925595236" y="529.0" />
+      <point x="1497.1649925595236" y="361.0" />
+      <point x="1383.163318452381" y="361.0" />
+      <point x="75.6666666666668" y="168.0" />
+    </edge>
+    <edge source="com.example.controller.GradeController" target="com.example.StudentDomain.StudentBean">
+      <point x="-44.57142857142867" y="-99.0" />
+      <point x="895.1819196428571" y="499.0" />
+      <point x="770.60546875" y="499.0" />
+      <point x="770.60546875" y="361.0" />
+      <point x="433.6722470238096" y="361.0" />
+      <point x="64.66666666666669" y="168.0" />
+    </edge>
+    <edge source="com.example.controller.GradeController" target="com.example.StudentDAO.StudentRepository">
+      <point x="-133.71428571428578" y="-99.0" />
+      <point x="806.0390625" y="519.0" />
+      <point x="439.1964285714286" y="519.0" />
+      <point x="108.66666666666669" y="41.5" />
+    </edge>
+    <edge source="com.example.controller.LoginController" target="com.example.DemoApplication">
+      <point x="99.75" y="-87.5" />
+      <point x="628.25" y="529.0" />
+      <point x="649.48046875" y="529.0" />
+      <point x="-22.125" y="30.0" />
+    </edge>
+    <edge source="com.example.controller.GradeController" target="com.example.StudentDomain.ClassBean">
+      <point x="89.14285714285711" y="-99.0" />
+      <point x="1028.896205357143" y="519.0" />
+      <point x="1136.5221354166665" y="519.0" />
+      <point x="1136.5221354166665" y="361.0" />
+      <point x="1231.8299851190475" y="361.0" />
+      <point x="-75.66666666666674" y="168.0" />
+    </edge>
+    <edge source="com.example.controller.ClassController" target="com.example.DemoApplication">
+      <point x="-103.0" y="-99.0" />
+      <point x="1298.4149925595236" y="489.0" />
+      <point x="737.98046875" y="489.0" />
+      <point x="66.375" y="30.0" />
+    </edge>
+    <edge source="com.example.controller.GradeController" target="com.example.StudentDAO.ClassRepository">
+      <point x="133.71428571428578" y="-99.0" />
+      <point x="1073.4676339285716" y="529.0" />
+      <point x="1225.0221354166665" y="529.0" />
+      <point x="-78.0" y="41.5" />
+    </edge>
+    <edge source="com.example.controller.GradeController" target="com.example.StudentDomain.GradeBean">
+      <point x="44.571428571428555" y="-99.0" />
+      <point x="984.3247767857142" y="509.0" />
+      <point x="1112.60546875" y="509.0" />
+      <point x="1112.60546875" y="361.0" />
+      <point x="1088.89453125" y="361.0" />
+      <point x="48.5" y="168.0" />
+    </edge>
+    <edge source="com.example.StudentDAO.StudentRepository" target="com.example.StudentDomain.StudentBean">
+      <point x="0.0" y="-41.5" />
+      <point x="330.5297619047619" y="361.0" />
+      <point x="369.0055803571429" y="361.0" />
+      <point x="0.0" y="168.0" />
+    </edge>
+    <edge source="com.example.controller.LoginController" target="com.example.StudentDAO.StudentRepository">
+      <point x="-99.75" y="-87.5" />
+      <point x="428.75" y="519.0" />
+      <point x="330.5297619047619" y="519.0" />
+      <point x="0.0" y="41.5" />
+    </edge>
+    <edge source="com.example.controller.GradeController" target="com.example.StudentDAO.GradeRepository">
+      <point x="0.0" y="-99.0" />
+      <point x="939.7533482142858" y="529.0" />
+      <point x="941.60546875" y="529.0" />
+      <point x="0.0" y="41.5" />
+    </edge>
+    <edge source="com.example.config.MyMvcConfig" target="com.example.handler.LoginHandlerInterceptor">
+      <point x="0.0" y="-30.0" />
+      <point x="0.0" y="30.0" />
+    </edge>
+    <edge source="com.example.controller.ClassController" target="com.example.StudentDAO.ClassRepository">
+      <point x="0.0" y="-99.0" />
+      <point x="1401.4149925595236" y="529.0" />
+      <point x="1381.0221354166665" y="529.0" />
+      <point x="78.0" y="41.5" />
+    </edge>
+    <edge source="com.example.controller.StudentController" target="com.example.StudentDomain.StudentBean">
+      <point x="-103.0" y="-110.5" />
+      <point x="51.5" y="529.0" />
+      <point x="70.58333333333326" y="529.0" />
+      <point x="70.58333333333326" y="361.0" />
+      <point x="304.33891369047615" y="361.0" />
+      <point x="-64.66666666666674" y="168.0" />
+    </edge>
+    <edge source="com.example.StudentDAO.GradeRepository" target="com.example.StudentDomain.GradeBean">
+      <point x="0.0" y="-41.5" />
+      <point x="941.60546875" y="361.0" />
+      <point x="991.89453125" y="361.0" />
+      <point x="-48.5" y="168.0" />
+    </edge>
+    <edge source="com.example.controller.StudentController" target="com.example.StudentDAO.StudentRepository">
+      <point x="0.0" y="-110.5" />
+      <point x="154.5" y="529.0" />
+      <point x="221.86309523809518" y="529.0" />
+      <point x="-108.66666666666669" y="41.5" />
+    </edge>
+    <edge source="com.example.controller.StudentController" target="com.example.DemoApplication">
+      <point x="103.0" y="-110.5" />
+      <point x="257.5" y="529.0" />
+      <point x="605.23046875" y="529.0" />
+      <point x="-66.375" y="30.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8875621890547263" x="803.3001865881429" y="513.2757006654458" />
+  <SelectedNodes>
+    <node>com.example.DemoApplication</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
