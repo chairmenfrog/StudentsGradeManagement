@@ -33,7 +33,7 @@
 │                  └─StudentDomain
 ```
 
-程序资源（清单）说明。
+###程序资源（清单）说明。
 
 程序文件或文件夹 |	作用
 | ---- | :---------- | 
@@ -56,11 +56,11 @@ pom.xml |	所有依赖管理的文件
 
 实验功能(以成绩为例) |	请求URI| 	请求方式|
 | ---- | :---------- | :----: |
-查询所有成绩 |	grades| GET|
-查询某个成绩(来到修改页面) | grade/1(1是指编号)| GET
+查询所有成绩 |	grades | GET|
+查询某个成绩(来到修改页面) | grade/1(1是指编号) | GET
 来到添加页面 |	grade |	GET
 添加成绩 | grade |	POST
-来到修改页面（查出课程学号进行信息回显）| grade/1 |	GET
+来到修改页面(查出课程学号进行信息回显)| grade/1 |	GET
 修改成绩 |	grade |	PUT
 删除成绩 |	grade/1 |	DELETE
 
@@ -87,8 +87,8 @@ css有时生效有时不生效的bug未解决
       
 ![学生添加.png](https://i.loli.net/2020/02/09/Zh3lbicgA9OHUa7.png)
 ![学生添加2.png](https://i.loli.net/2020/02/09/WIMCAxQmrjshJnZ.png)
-  - 修改冯绍峰年龄12,更新时间为1月。Id输入框变灰色,只能显示不能输入
-      
+
+  - 修改冯绍峰年龄12,更新时间为1月。Id输入框变灰色,只能显示不能输入      
 
 ![学生修改.png](https://i.loli.net/2020/02/09/dzr5QwxS4uc3Gfs.png)
 ![学生修改2.png](https://i.loli.net/2020/02/09/6Qmjn38dLUGP5Th.png)
